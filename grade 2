@@ -1,0 +1,54 @@
+/* Grade counter with sentinel controlled iteration
+* Import scanner
+* Declare variables
+* Processing
+* Calculations
+* Print
+*/
+
+import java.util.Scanner; // program uses class Scanner
+
+public class Main {
+  public static void main(String[] args) {
+    // create Scanner to obtain input from command window
+    Scanner input = new Scanner(System.in);
+
+    // initialization phase
+    int total = 0; // initialize sum of grades
+    int gradeCounter = 0; // initialize # of grades entered so far
+
+    // processing phase
+    // Promt for input
+    System.out.print("Enter grade or -1 to quit: "); // prompt
+    int grade = input.nextInt(); // input next grade
+
+    //Loop until sentinel value from user
+    while (grade != -1) {
+    total += grade; // add grade to total (total = total + grade)
+    gradeCounter = gradeCounter + 1; // increment counter
+        
+    //Promt for input
+    System.out.print("Enter grade or -1 to quit: "); // prompt
+    grade = input.nextInt(); // input next grade
+        
+    } 
+
+    // termination phase
+    // if user entered atleast one grade
+    if (gradeCounter != 0){
+      //use decimal point to calculate average
+      double average = (double) total / gradeCounter; 
+
+    
+    // display total and average of grades
+    System.out.printf("%nTotal of all %d grades is %d%n", gradeCounter, total);
+    System.out.printf("Class average is: %.2f%n", average);
+    }
+    else { //no grades enetered
+    System.out.println("No grades were enetered");
+    }
+    
+  }
+} 
+
+
